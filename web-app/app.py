@@ -38,7 +38,7 @@ def make_move():
             board_svg = game.get_board_svg()
             game.turn = False  # Switch turn to LLM
             message = "It's the LLM's turn."
-            return jsonify({"success": True, "board_svg": board_svg, "message": message})
+            return jsonify({"success": True, "board_svg": board_svg, "message": message, "isLLMmove": True})
         else:
             board_svg = game.get_board_svg()
             message = "Invalid move. Try again."

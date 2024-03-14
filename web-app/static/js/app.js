@@ -18,6 +18,10 @@ function submitMove() {
             if(response.success) {
                 updateBoard(response.board_svg); // Update the board SVG
                 updateMessage(response.message); // Update the game message
+
+                if (response.isLLMmove) {
+                    submitMove()
+                }
             } else {
                 alert('Error: ' + response.error); // Show error
             }
