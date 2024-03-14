@@ -15,7 +15,7 @@ class chess_game:
         self.move_number = 0    # Number of moves have happened so far
 
     def update_display(self):
-        display(chess.svg.board(board=self.board, size=400))
+        display(chess.svg.board(board=self.board, size=800))
 
     def get_user_input(self):
         # Get user input for the next move
@@ -35,7 +35,7 @@ class chess_game:
         try:
             # Attempt to parse the SAN (Standard Algebraic Notation) move
             move = self.board.parse_san(move_san)
-            
+            print("update ", move)
             # If successful and the move is legal, apply it to the board
             if move in self.board.legal_moves:
                 self.board.push(move)
@@ -70,7 +70,7 @@ class chess_game:
             
     def get_board_svg(self):
         # Returns the SVG XML string of the current board state
-        return chess.svg.board(board=self.board, size=400)
+        return chess.svg.board(board=self.board, size=800)
 
     def play_game(self):
         while True:
