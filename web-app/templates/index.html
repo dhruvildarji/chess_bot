@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <title>Chess Game</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
     <div id="gameMessage" style="font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 20px;">Welcome to Chess!</div>
-    <div id="chessboard" style="width: 800; height: 800px;"></div>
-    <input type="text" id="move" placeholder="e2e4">
-    <button onclick="submitMove()">Make Move</button>
+
+    <div style="display: flex; flex-direction: row;">
+        <div id="chessboard" style="width: 800px; height: 800px;"></div>
+
+        <form class="col s12" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">extension</i>
+                <input id="move" type="text" class="validate" placeholder="e2e4">
+                <!-- <label for="icon_prefix">Make Move</label> -->
+            </div>
+            <button onclick="submitMove()" class="btn waves-effect waves-light" type="submit" name="action" style="margin-left: 20px; background-color: rgba(0, 0, 0, 0.8);">
+                Make Move
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <!-- <input type="text" id="move" placeholder="e2e4"> -->
+    <!-- <button onclick="submitMove()">Make Move</button> -->
     <script src="/static/js/app.js"></script> <!-- Adjust the path as necessary -->
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
